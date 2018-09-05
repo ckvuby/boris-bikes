@@ -10,7 +10,11 @@ class DockingStation
   end
 
   def dock_bike(bike)
-     @bike_id = bike
+    if @bike_id.nil?
+      @bike_id = bike
+    else
+      raise "Sorry, I'm full"
+    end
   end
 
 end
