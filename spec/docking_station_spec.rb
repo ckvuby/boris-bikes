@@ -31,23 +31,23 @@ end
 
     it "docks a bike" do
     bike = Bike.new
-      expect(subject.dock_bike(bike)).to eq(bike)
+      expect(subject.dock_bike(bike)).to eq([bike])
     end
 
     it "returns an error when docking station already has a bike and person tries to dock a bike" do
-    subject.dock_bike(Bike.new)
+    20.times {subject.dock_bike(Bike.new)}
       expect{subject.dock_bike(Bike.new)}.to raise_error("Sorry, I'm full")
     end
     
   end
 
-  describe "bike_id" do
+  # describe "bike_id" do
 
-    it "returns list of bikes stored" do
-    bike = Bike.new
-    subject.dock_bike(bike)
-      expect(subject.bike_id).to eq(bike)
-    end
-  end
+  #   it "returns list of bikes stored" do
+  #   bike = Bike.new
+  #   subject.dock_bike(bike)
+  #     expect(subject.bike_list).to eq(bike)
+  #   end
+  # end
 
 end
