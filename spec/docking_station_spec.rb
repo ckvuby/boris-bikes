@@ -17,8 +17,12 @@ describe DockingStation do
 
 describe "release_bike" do
 
-    it "returns a Bike object in a working? state." do
-      expect(subject.release_bike.working?).to eq true
+    # it "returns a Bike object in a working? state." do
+    #   expect(subject.release_bike.working?).to eq true
+    # end
+
+    it "returns an error when it's empty and someone wants a bike" do
+        expect{subject.release_bike}.to raise_error("Sorry, I have no bikes")
     end
 
   end
@@ -39,5 +43,7 @@ describe "release_bike" do
       expect(subject.bike_id).to eq(bike)
     end
   end
+
+
     
 end
