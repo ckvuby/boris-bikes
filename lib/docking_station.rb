@@ -1,7 +1,7 @@
 require_relative "./bike.rb"
 
 class DockingStation
-  attr_reader :bike_id
+  attr_reader :bike_list
 
 
   def initialize
@@ -24,9 +24,3 @@ class DockingStation
   end
 
 end
-
-# class Collection
-#   def initialize
-#     collection = []
-#   end
-# end

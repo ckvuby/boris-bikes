@@ -12,7 +12,7 @@ describe DockingStation do
   end
 
   it 'responds to calling bike_list' do
-    expect(subject).to respond_to(:bike_id)
+    expect(subject).to respond_to(:bike_list)
   end
 
 describe "release_bike" do
@@ -38,16 +38,18 @@ end
     20.times {subject.dock_bike(Bike.new)}
       expect{subject.dock_bike(Bike.new)}.to raise_error("Sorry, I'm full")
     end
-    
+
   end
 
-  # describe "bike_id" do
+  describe "bike_list" do
 
-  #   it "returns list of bikes stored" do
-  #   bike = Bike.new
-  #   subject.dock_bike(bike)
-  #     expect(subject.bike_list).to eq(bike)
-  #   end
-  # end
+    it "returns list of bikes stored" do
+    bike1 = Bike.new
+    bike2 = Bike.new
+    subject.dock_bike(bike1)
+    subject.dock_bike(bike2)
+      expect(subject.bike_list).to eq([bike1, bike2])
+    end
+  end
 
 end
